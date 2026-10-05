@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "claude-environment-id"
+description = "Private Claude self-hosted environment identifier"
+regex = '''ccpool_[A-Za-z0-9]{20,}'''
+keywords = ["ccpool_"]

@@ -1,0 +1,37 @@
+{
+	admin off
+	servers :8081 {
+		protocols h2c
+	}
+}
+
+# Modal's SDK uses gRPC over HTTP/2. Only this upstream receives Modal credentials.
+:8081 {
+	reverse_proxy https://api.modal.com {
+		header_up Host api.modal.com
+		header_up X-Modal-Host api.modal.com
+		header_up X-Modal-Token-Id "{env.MODAL_TOKEN_ID}"
+		header_up X-Modal-Token-Secret "{env.MODAL_TOKEN_SECRET}"
+		transport http {
+			versions 2
+		}
+	}
+}
+
+:8080 {
+	@playground expression `{env.CLAUDE_API_HOST} != ""`
+	handle @playground {
+		reverse_proxy {env.CLAUDE_API_HOST}:443 {
+			header_up Host {env.CLAUDE_API_HOST}
+			header_up -Authorization
+			header_up Modal-Key "{env.CLAUDE_MODAL_PROXY_TOKEN_ID}"
+			header_up Modal-Secret "{env.CLAUDE_MODAL_PROXY_TOKEN_SECRET}"
+			transport http {
+				tls
+			}
+		}
+	}
+	handle {
+		respond "Configure an API route in src/Caddyfile." 503
+	}
+}

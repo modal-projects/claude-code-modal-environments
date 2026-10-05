@@ -1,0 +1,14 @@
+# Ignore any local credential files left from earlier setups.
+.env
+.env.*
+
+# Local toolchain and experiment evidence.
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.artifacts/
+
+# Local research history, archived source snapshots, and experiment records.
+/.archive/

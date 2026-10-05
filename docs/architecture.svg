@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1224" height="370" viewBox="0 0 1224 370">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#52636f"/>
+    </marker>
+    <style>
+      text { font-family: "DejaVu Sans", sans-serif; fill: #1c303a; }
+      .title { font-size: 18px; font-weight: bold; text-anchor: middle; }
+      .primitive { font-size: 14px; font-weight: bold; fill: #286144; text-anchor: middle; }
+      .detail { font-size: 13px; fill: #52636f; text-anchor: middle; }
+      .box { fill: white; stroke: #aac6b8; stroke-width: 1.5; }
+      .arrow { fill: none; stroke: #52636f; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1224" height="370" fill="white"/>
+  <rect x="198" y="32" width="790" height="306" rx="16"
+        fill="#f0f8f3" stroke="#aac6b8" stroke-width="1.5"/>
+  <text x="222" y="68" font-size="18" font-weight="bold">Modal App: claude-code</text>
+
+  <rect class="box" x="24" y="130" width="144" height="106" rx="10"/>
+  <text class="title" x="96" y="173">Claude Code</text>
+  <text class="detail" x="96" y="200">Your conversation</text>
+
+  <rect class="box" x="222" y="130" width="184" height="106" rx="10"/>
+  <text class="title" x="314" y="159">Orchestrator</text>
+  <text class="primitive" x="314" y="185">Modal Cls</text>
+  <text class="detail" x="314" y="211">Always running</text>
+
+  <rect class="box" x="432" y="130" width="178" height="106" rx="10"/>
+  <text class="title" x="521" y="159">Provisioning</text>
+  <text class="primitive" x="521" y="185">Modal Function</text>
+  <text class="detail" x="521" y="211">Creates / resumes</text>
+
+  <rect class="box" x="636" y="130" width="148" height="106" rx="10"/>
+  <text class="title" x="710" y="159">Sandbox</text>
+  <text class="primitive" x="710" y="185">Modal Sandbox</text>
+  <text class="detail" x="710" y="211">Runs Claude</text>
+
+  <rect class="box" x="810" y="130" width="154" height="106" rx="10"/>
+  <text class="title" x="887" y="159">Sidecar</text>
+  <text class="primitive" x="887" y="185">Sandbox Sidecar</text>
+  <text class="detail" x="887" y="211">Caddy</text>
+
+  <rect class="box" x="1018" y="130" width="182" height="106" rx="10" stroke-dasharray="5 4"/>
+  <text class="title" x="1109" y="162">APIs (optional)</text>
+  <text class="detail" x="1109" y="188">Other services or</text>
+  <text class="detail" x="1109" y="211">Modal playground</text>
+
+  <path class="arrow" d="M 168 183 H 216"/>
+  <path class="arrow" d="M 406 183 H 426"/>
+  <path class="arrow" d="M 610 183 H 630"/>
+  <path class="arrow" d="M 784 183 H 804"/>
+  <path class="arrow" d="M 964 183 H 1012"/>
+
+  <path d="M 222 266 H 964" stroke="#c9ded1"/>
+  <text class="primitive" x="340" y="295">Modal Dict</text>
+  <text class="detail" x="340" y="316">Session state</text>
+  <text class="primitive" x="593" y="295">Modal Secrets</text>
+  <text class="detail" x="593" y="316">Claude and API credentials</text>
+  <text class="primitive" x="846" y="295">Modal Images</text>
+  <text class="detail" x="846" y="316">Container environments</text>
+</svg>
