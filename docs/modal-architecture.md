@@ -125,7 +125,7 @@ sandbox launch.
 ## Operating defaults
 
 - Use one deployment per Claude environment. The orchestrator stays running until stopped.
-- Sandboxes release after one minute idle, retire after 12 minutes, and have a 15-minute hard limit.
+- Sandboxes release after one minute idle, retire after 57 minutes, and have a one-hour hard limit and a five-minute Modal idle timeout.
 - Inspect or stop the app and sandboxes in the Modal dashboard.
 - To discard resume history, stop the app and sandboxes before deleting `claude-code-sessions`.
 

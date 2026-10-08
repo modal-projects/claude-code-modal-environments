@@ -67,7 +67,7 @@ Edit the code, then run `uv run modal deploy src/app.py` again.
 
 | Change | Edit here |
 | --- | --- |
-| CPU, memory, GPU | [Sandbox resources](src/app.py#L180): `cpu=2`, `memory=4096`, `gpu=None`. Try `gpu="T4"`. |
+| CPU, memory, GPU | [Sandbox resources](src/app.py#L180): CPU and memory use Modal defaults with bursting; `gpu=None`. Try `gpu="T4"`. |
 | Packages or Modal SDK installation | [Sandbox image](src/images.py#L25) |
 | Claude version | [Version and checksum](src/images.py#L7) |
 | Let Claude build and run Modal apps | [Optional playground](#optional-work-on-a-modal-codebase) |

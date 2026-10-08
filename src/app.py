@@ -177,10 +177,9 @@ def provision(order):
             *sandbox_command(token_path),
             # Use this deployment's sandbox.py when restoring an older filesystem snapshot.
             image=image.add_local_file(SANDBOX_SCRIPT, SANDBOX_PATH),
-            cpu=2,
-            memory=4096,  # MiB
             gpu=None,  # e.g. "T4" or "L4"
-            timeout=900,
+            timeout=3600,
+            idle_timeout=300,
             workdir="/workspace",
             include_oidc_identity_token=False,
             experimental_options={"enable_exit_snapshot": True},
@@ -198,7 +197,7 @@ def provision(order):
                 "*.modal2.com",
             ],
             env={
-                "SANDBOX_RETIRE_AT": str(int(time.time()) + 720),
+                "SANDBOX_RETIRE_AT": str(int(time.time()) + 3420),
                 "CLAUDE_SIDECAR_URL": "http://sidecar:8080",
                 "CLAUDE_MODAL_ENVIRONMENT": PLAYGROUND_ENVIRONMENT or "",
             },
